@@ -1,31 +1,13 @@
 #include "main.h"
 
 /**
- * jack_bauer -prints every minute of the day
+ * add - Adds two integers.
+ * @num1: The first integer to be added.
+ * @num2: The second integer to be added.
  *
- * Return: Always 0.
+ * Return: The result of the addition.
  */
-
-void jack_bauer(void)
-
+int add(int num1, int num2)
 {
-	int a;
-	int b;
-
-	for (a = 0; a <= 23; a++)
-	{
-		for (b = 0; b <= 59; b++)
-		{
-			_putchar (a / 10 + '0');
-			_putchar (a % 10 + '0');
-			_putchar (':');
-			_putchar (b / 10 + '0');
-			_putchar (b % 10 + '0');
-			_putchar ('\n');
-
-		}
-
-
-	}
-
+	return (num1 + num2);
 }
