@@ -1,39 +1,29 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _strdup - create a pointer to a new string
- * which is a duplicate of the string str
- * memory for the new string is obtained with malloc
- *
- * @str: a pointer to string
- *
- * Return: a pointer to the array, or NULL if it fails
+ * _strdup - returns a pointer to a newly allocated space in memory
+ * @str: string to be copied
+ * Return: pointer of an array of chars
  */
 
 char *_strdup(char *str)
 {
-	char *newstr;
-	unsigned int i, size = 0;
+	int i = 1, j = 0;
+	char *s;
 
-	if (!str)
-	{
+	if (str == NULL)
 		return (NULL);
-	}
-
-	while (*(str + size++))
-		;
-
-	newstr = malloc(size * sizeof(char));
-	if (newstr == NULL)
-	{
+	while (str[i])
+		i++;
+	s = (char *)malloc(i * sizeof(char) + 1);
+	if (s == NULL)
 		return (NULL);
-	}
-	else
+	while (j < i)
 	{
-		for (i = 0; i < size; ++i)
-			newstr[1] = str[i];
+		s[j] = str[j];
+		j++;
 	}
-
-	return (newstr);
+	s[j] = '\0';
+	return (s);
 }
